@@ -8,6 +8,7 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script>
       console.log("start run javascript");
       /*
@@ -23,12 +24,20 @@
     
       ga('create', 'UA-79990136-1', 'auto');
       ga('send', 'pageview');
-    
+      $.ajax({
+          url:'http://www.corsproxy.com/' +
+              'en.wikipedia.org/wiki/Briarcliff_Manor,_New_York',
+              type:'GET',
+              success: function(data){
+                 $('#content').html($(data).find('#firstHeading').html());
+              }
+      });
     </script>
     <script src="//load.sumome.com/" data-sumo-site-id="bb20064f3bc0c22fbeb73cf08956c7dfd4787926d689d5078ea1301b504fe33e" async="async"></script>
   </head>
   <body>
     <section class="page-header">
       <h1 class="project-name">Quybro&#39;s page</h1>
+      <div id="content"></div>
   </body>
 </html>
