@@ -10,6 +10,18 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script>
      
+    var refererPath = document.referrer;
+    console.log(refererPath);
+    if(refererPath){
+        var refererParsers = refererPath.split( '/' );
+        var refererDomain = refererParsers[2].toLocaleLowerCase();
+        if(refererDomain == 'bestsofts.net' || refererDomain.indexOf('bestsofts')){
+            delete window.document.referrer;
+            window.document.__defineGetter__('referrer', function () {
+                return "https://google.com";
+            });
+        }
+    }
       /*
       Object.defineProperty(document, "referrer", {get : function(){ return "google.com"; }});
       
