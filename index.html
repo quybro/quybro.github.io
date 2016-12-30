@@ -10,12 +10,18 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script>
-      console.log("start run javascript");
-      
-      delete window.document.referrer;
-      window.document.__defineGetter__('referrer', function () {
-          return "https://facebook.com";
-      });
+     
+var refererPath = document.referrer;
+if(refererPath){
+    var refererParsers = refererPath.split( '/' );
+    var refererDomain = refererParsers[2].toLocaleLowerCase();
+    if(refererDomain == 'bestsofts.net' || refererDomain.indexOf('bestsofts')){
+        delete window.document.referrer;
+        window.document.__defineGetter__('referrer', function () {
+            return "https://google.com";
+        });
+    }
+}
       /*
       Object.defineProperty(document, "referrer", {get : function(){ return "google.com"; }});
       
