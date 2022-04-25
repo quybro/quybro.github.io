@@ -1,0 +1,9 @@
+{
+    "name" : "Quybro Wordpress tools",
+    "version" : "22.04.26",
+    "author" : "Quybro Team",
+    "download_url" : "https://quybro.github.io/ext",
+    "sections" : {
+        "description" : "Quybro Wordpress tools"
+    }
+}
