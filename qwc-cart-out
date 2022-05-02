@@ -1,9 +1,9 @@
 {
-    "name" : "QWC Checkout redirect",
+    "name" : "QWC Cart Out",
     "version" : "22.05.01",
     "author" : "Quybro Team",
     "download_url" : "https://quybro.github.io/ext",
     "sections" : {
-        "description" : "QWC Checkout redirect"
+        "description" : "QWC Cart Out"
     }
 }
